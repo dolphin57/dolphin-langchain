@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=45","wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dolphin-langchain"
+version = "0.1.0"
+description = "Dolphin LangChain Project"
+requires-python = ">=3.8"
+dependencies = [
+    "langchain",
+    "Langchain-core",
+    "Langchain-openai",
+    "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[tool.setuptools]
+packages = ["agent_code", "memory_code", "model_code", "tool_code"]
+py-modules = ["init_llm", "env_utils"]
