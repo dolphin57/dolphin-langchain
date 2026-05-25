@@ -63,6 +63,7 @@ def update_user_info(name:str,hobby:list,runtime:ToolRuntime) -> Command:
 agent = create_agent(
     model=ark_llm,
     tools=[get_user_info,update_user_info],
+    system_prompt="你是一个用户信息管理助手,你可以获取和更新用户信息。如果用户要求更新用户信息,请使用update_user_info工具。",
     checkpointer=checkpointer,
     state_schema=CustomAgentState
 )
